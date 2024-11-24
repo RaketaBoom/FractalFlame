@@ -6,8 +6,8 @@ public record ConfigDto(
     int height,
     int width,
     int iterations,
-    boolean gammaCorrection,
-    boolean symmetry,
-    List<String> transformations
+    int symmetry,
+    List<VariationDto> variations,
+    String format
 ) {
 }

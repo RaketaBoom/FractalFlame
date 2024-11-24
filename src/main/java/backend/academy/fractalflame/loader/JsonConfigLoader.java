@@ -15,7 +15,7 @@ public class JsonConfigLoader {
         try {
             return mapper.readValue(path.toFile(), ConfigDto.class);
         } catch (IOException e) {
-            throw new JsonLoadException(path.toString());
+            throw new JsonLoadException(e.getMessage());
         }
     }
 }
