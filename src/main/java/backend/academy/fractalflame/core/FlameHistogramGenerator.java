@@ -1,4 +1,4 @@
-package backend.academy.fractalflame.generator;
+package backend.academy.fractalflame.core;
 
 import backend.academy.fractalflame.constant.Constants;
 import backend.academy.fractalflame.model.FractalImage;

@@ -1,19 +1,48 @@
 {
     "height": 1080,
     "width": 1920,
-    "iterations": 1000,
-    "symmetry": 2,
+    "iterations": 214748,
+    "symmetry": 4,
     "variations": [
         {
             "name": "Heart",
             "weight": 0.8,
-            "color": "#ebf2fa"
-        },
-        {
-            "name": "Hyperbolic",
-            "weight": 0.2,
-            "color": "#ebf2fa"
+            "color": "#DA1C55"
         }
     ],
+
+    "affine_functions": [
+        {
+            "a": 0.5,
+            "b": 0,
+            "c": 0,
+            "d": 0.5,
+            "e": 0,
+            "f": 0,
+            "weight": 0.1,
+            "color": "#DA1C95"
+        },
+        {
+            "a": 0.7,
+            "b": 0.2,
+            "c": -0.2,
+            "d": 0.7,
+            "e": 0.1,
+            "f": -0.1,
+            "weight": 0.2,
+            "color": "#1CDA95"
+        },
+        {
+            "a": -0.6,
+            "b": 0.4,
+            "c": -0.4,
+            "d": 0.6,
+            "e": -0.2,
+            "f": 0.2,
+            "weight": 0.3,
+            "color": "#1C95DA"
+        }
+    ],
+
     "format": "png"
 }

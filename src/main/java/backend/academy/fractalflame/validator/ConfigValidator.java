@@ -3,7 +3,6 @@ package backend.academy.fractalflame.validator;
 import backend.academy.fractalflame.constant.Constants;
 import backend.academy.fractalflame.dto.ConfigDto;
 import backend.academy.fractalflame.dto.VariationDto;
-import backend.academy.fractalflame.enums.ImageFormat;
 import backend.academy.fractalflame.exception.EmptyFormatFieldException;
 import backend.academy.fractalflame.exception.EmptyVariationListException;
 import backend.academy.fractalflame.exception.IllegalIterationsException;

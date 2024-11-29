@@ -25,6 +25,10 @@ public class FractalImage {
         return data[pixelPoint.y()][pixelPoint.x()];
     }
 
+    public Pixel pixel(int x, int y) {
+        return data[y][x];
+    }
+
     public Color[][] getColorsOfImage() {
         Color[][] colors = new Color[height][width];
 

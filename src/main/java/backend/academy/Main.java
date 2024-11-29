@@ -1,7 +1,7 @@
 package backend.academy;
 
 import backend.academy.fractalflame.FractalFlameApi;
-import backend.academy.fractalflame.generator.FlameHistogramGenerator;
+import backend.academy.fractalflame.core.FlameHistogramGenerator;
 import backend.academy.fractalflame.loader.JsonConfigLoader;
 import backend.academy.fractalflame.service.FractalFlameService;
 import com.fasterxml.jackson.databind.ObjectMapper;
