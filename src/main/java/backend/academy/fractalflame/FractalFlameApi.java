@@ -25,6 +25,7 @@ public class FractalFlameApi {
         ImageFormat format = ImageFormat.fromString(configDto.format());
 
         FractalImage fractalImage = service.createFlameHistogram(histogramRequest);
+        fractalImage = service.postProcessing(fractalImage);
 
         saveImage(fractalImage, Constants.OUTPUT_DIRECTORY, format);
     }

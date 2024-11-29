@@ -3,10 +3,11 @@ package backend.academy.fractalflame.service;
 import backend.academy.fractalflame.constant.Constants;
 import backend.academy.fractalflame.core.FlameHistogramGenerator;
 import backend.academy.fractalflame.dto.HistogramRequest;
-import backend.academy.fractalflame.dto.PostProcessingRequest;
 import backend.academy.fractalflame.model.FractalImage;
 import backend.academy.fractalflame.model.Rect;
 import backend.academy.fractalflame.model.Variation;
+import backend.academy.fractalflame.postprocessing.ImageProcessor;
+import backend.academy.fractalflame.postprocessing.impl.LogDensity;
 import backend.academy.fractalflame.transformation.Transformation;
 import backend.academy.fractalflame.transformation.impl.Symmetry;
 import java.util.List;
@@ -31,8 +32,12 @@ public class FractalFlameService {
     }
 
     //TODO написать постпроцессинг, можно тоже конфигурировать постпроцессинг
-    public FractalImage postProcessing(PostProcessingRequest request) {
-        return null;
+    public FractalImage postProcessing(FractalImage image) {
+        ImageProcessor logDensity = new LogDensity(Constants.GAMMA);
+
+        logDensity.process(image);
+
+        return image;
     }
 
     private void addSymmetry(List<Variation> variations, int symmetryParts, Rect world) {
