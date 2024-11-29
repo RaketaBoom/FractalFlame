@@ -22,7 +22,7 @@ public class FractalFlameApi {
         ConfigDto configDto = configLoader.loadConfig(Path.of(Constants.CONFIG_PATH));
 
         HistogramRequest histogramRequest = HistogramRequestFactory.createFromConfig(configDto);
-        ImageFormat format = ImageFormat.fromString(configDto.format());
+        ImageFormat format = ImageFormat.valueOfLabel(configDto.format());
 
         FractalImage fractalImage = service.createFlameHistogram(histogramRequest);
         fractalImage = service.postProcessing(fractalImage);

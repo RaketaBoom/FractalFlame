@@ -1,22 +1,33 @@
 package backend.academy.fractalflame.enums;
 
+import backend.academy.fractalflame.exception.UnknownImageFormatException;
+import java.util.HashMap;
+import java.util.Map;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
+@Getter
 public enum ImageFormat {
     JPEG("jpg"),
     BMP("bmp"),
     PNG("png");
 
-    private final String name;
+    private final String label;
 
-    public static ImageFormat fromString(String name) {
-        for (ImageFormat format : values()) {
-            if (format.name.equalsIgnoreCase(name)) {
-                return format;
-            }
+    private static final Map<String, ImageFormat> BY_LABEL = new HashMap<>();
+
+    static {
+        for (var value : values()) {
+            BY_LABEL.put(value.label(), value);
         }
-        // TODO заменить эксепшн на кастомный
-        throw new IllegalArgumentException("Unknown image format: " + name);
+    }
+
+    public static ImageFormat valueOfLabel(String label) {
+        ImageFormat imageFormat = BY_LABEL.get(label);
+        if (imageFormat == null) {
+            throw new UnknownImageFormatException();
+        }
+        return imageFormat;
     }
 }
