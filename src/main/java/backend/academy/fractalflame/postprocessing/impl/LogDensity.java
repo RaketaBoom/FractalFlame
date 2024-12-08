@@ -8,10 +8,12 @@ import java.awt.Color;
 
 public record LogDensity(double gamma) implements ImageProcessor {
 
+    public static final int MAX_COLOR_CODE = 255;
+
     @Override
     public void process(FractalImage image) {
         int maxHitCount = findMaxHitCount(image);
-        if(maxHitCount == 0){
+        if (maxHitCount == 0) {
             throw new IllegalMaxHitCountException();
         }
 
@@ -20,8 +22,8 @@ public record LogDensity(double gamma) implements ImageProcessor {
                 Pixel pixel = image.pixel(x, y);
                 if (pixel.hitCount() > 0) {
                     double normalizedDensity = 1.0 * pixel.hitCount() / maxHitCount;
-                    double brightness = Math.log(1 + normalizedDensity * (Math.E - 1)); // Логарифмическая шкала
-                    brightness = Math.pow(brightness, 1.0 / gamma); // Гамма-коррекция
+                    double brightness = Math.log(1 + normalizedDensity * (Math.E - 1));
+                    brightness = Math.pow(brightness, 1.0 / gamma);
                     pixel.color(scaleBrightness(pixel.color(), brightness));
                 }
             }
@@ -43,10 +45,9 @@ public record LogDensity(double gamma) implements ImageProcessor {
         int green = (int) (color.getGreen() * brightness);
         int blue = (int) (color.getBlue() * brightness);
 
-        // Ограничиваем значения цвета в диапазоне [0, 255]
-        red = Math.min(255, Math.max(0, red));
-        green = Math.min(255, Math.max(0, green));
-        blue = Math.min(255, Math.max(0, blue));
+        red = Math.min(MAX_COLOR_CODE, Math.max(0, red));
+        green = Math.min(MAX_COLOR_CODE, Math.max(0, green));
+        blue = Math.min(MAX_COLOR_CODE, Math.max(0, blue));
 
         return new Color(red, green, blue);
     }

@@ -1,59 +1,52 @@
 {
-    "threads": 1,
+    "threads": 8,
     "height": 4096,
     "width": 4096,
-    "iterations": 214748000,
+    "iterations": 200000000,
     "symmetry": 1,
     "variations": [
         {
-            "name": "Heart",
-            "weight": 0.8,
-            "color": "#E4E4E4"
+            "name": "Spherical",
+            "weight": 0.6,
+            "color": "#FF4500"
+        },
+        {
+            "name": "Fisheye",
+            "weight": 0.4,
+            "color": "#1E90FF"
         }
     ],
-
     "affine_functions": [
         {
-            "a": 0.5,
-            "b": 0.0,
-            "c": 0.0,
-            "d": 0.5,
+            "a": 0.7,
+            "b": -0.3,
+            "c": 0.3,
+            "d": 0.7,
             "e": 0.0,
             "f": 0.0,
-            "weight": 0.1,
-            "color": "#EC3A3D"
+            "weight": 0.5,
+            "color": "#FF6347"
         },
         {
-            "a": 0.85,
-            "b": 0.04,
-            "c": -0.04,
-            "d": 0.85,
-            "e": 0.0,
-            "f": 1.6,
-            "weight": 0.1,
-            "color": "#EC3A3D"
+            "a": -0.8,
+            "b": 0.2,
+            "c": -0.2,
+            "d": 0.8,
+            "e": 0.2,
+            "f": -0.2,
+            "weight": 0.3,
+            "color": "#00BFFF"
         },
         {
-            "a": 0.2,
-            "b": -0.26,
-            "c": 0.23,
-            "d": 0.22,
-            "e": 0.0,
-            "f": 1.6,
-            "weight": 0.1,
-            "color": "#EC3A3D"
-        },
-        {
-            "a": -0.15,
-            "b": 0.28,
-            "c": 0.26,
-            "d": 0.24,
-            "e": 0.0,
-            "f": 0.44,
-            "weight": 0.1,
-            "color": "#EC3A3D"
+            "a": 0.6,
+            "b": -0.4,
+            "c": 0.4,
+            "d": 0.6,
+            "e": -0.3,
+            "f": 0.3,
+            "weight": 0.2,
+            "color": "#FF0000"
         }
     ],
-
     "format": "png"
 }
