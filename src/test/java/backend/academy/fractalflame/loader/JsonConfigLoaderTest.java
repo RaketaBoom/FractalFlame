@@ -1,5 +1,6 @@
 package backend.academy.fractalflame.loader;
 
+import backend.academy.fractalflame.dto.AffineFunctionDto;
 import backend.academy.fractalflame.dto.ConfigDto;
 import backend.academy.fractalflame.dto.VariationDto;
 import backend.academy.fractalflame.exception.JsonLoadException;
@@ -56,13 +57,16 @@ class JsonConfigLoaderTest {
 
     private ConfigDto getExpectedConfigDto1() {
         return new ConfigDto(
+            1,
             1080,
             1920,
             1000,
             2,
             List.of(new VariationDto("Heart", 0.8, "#ebf2fa"),
-                new VariationDto("Hyperbolic", 0.2, "#ebf2fa"))
-            , "png"
+                new VariationDto("Hyperbolic", 0.2, "#ebf2fa")),
+            List.of(new AffineFunctionDto(0.5, 0.5, 0.5, 0.5, 0.5, 0.5,3,"#ebf2fa"),
+                new AffineFunctionDto(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 2, "#ebf2fa")),
+            "png"
         );
     }
 }

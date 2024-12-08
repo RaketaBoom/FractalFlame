@@ -1,4 +1,5 @@
 {
+    "threads": 1,
     "height": 1080,
     "width": 1920,
     "iterations": 1000,
@@ -15,5 +16,28 @@
             "color": "#ebf2fa"
         }
     ],
+    "affine_functions": [
+        {
+            "a": 0.5,
+            "b": 0.5,
+            "c": 0.5,
+            "d": 0.5,
+            "e": 0.5,
+            "f": 0.5,
+            "weight": 3,
+            "color": "#ebf2fa"
+        },
+        {
+            "a": 0.5,
+            "b": 0.5,
+            "c": 0.5,
+            "d": 0.5,
+            "e": 0.5,
+            "f": 0.5,
+            "weight": 2,
+            "color": "#ebf2fa"
+        }
+    ],
+
     "format": "png"
 }
