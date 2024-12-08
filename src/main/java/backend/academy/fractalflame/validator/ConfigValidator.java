@@ -6,6 +6,7 @@ import backend.academy.fractalflame.dto.VariationDto;
 import backend.academy.fractalflame.exception.EmptyFormatFieldException;
 import backend.academy.fractalflame.exception.EmptyVariationListException;
 import backend.academy.fractalflame.exception.IllegalIterationsException;
+import backend.academy.fractalflame.exception.IllegalNumThreadsException;
 import backend.academy.fractalflame.exception.IllegalSizeException;
 import backend.academy.fractalflame.exception.IllegalSymmetryException;
 import java.util.List;
@@ -14,11 +15,18 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class ConfigValidator {
     public static void validate(ConfigDto configDto) {
+        valildateThreads(configDto.threads());
         validateSize(configDto.height(), configDto.width());
         validateIterations(configDto.iterations());
         validateSymmetry(configDto.symmetry());
         validateVariations(configDto.variations());
         validateFormat(configDto.format());
+    }
+
+    private static void valildateThreads(int threads) {
+        if (threads < 1) {
+            throw new IllegalNumThreadsException(threads);
+        }
     }
 
     private static void validateSize(int height, int width) {

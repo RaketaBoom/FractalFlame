@@ -1,7 +1,8 @@
 {
+    "threads": 1,
     "height": 4096,
     "width": 4096,
-    "iterations": 21474800,
+    "iterations": 214748000,
     "symmetry": 1,
     "variations": [
         {

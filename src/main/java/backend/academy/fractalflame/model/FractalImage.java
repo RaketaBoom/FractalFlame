@@ -1,6 +1,6 @@
 package backend.academy.fractalflame.model;
 
-import backend.academy.fractalflame.constant.Constants;
+import backend.academy.fractalflame.model.pixel.Pixel;
 import java.awt.Color;
 import lombok.Getter;
 
@@ -10,16 +10,10 @@ public class FractalImage {
     private final int height;
     private final Pixel[][] data;
 
-    public FractalImage(int width, int height) {
+    public FractalImage(int width, int height, Pixel[][] data) {
         this.width = width;
         this.height = height;
-        data = new Pixel[height][width];
-
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                data[i][j] = new Pixel(Constants.BACKGROUND_COLOR, 0);
-            }
-        }
+        this.data = data;
     }
 
     public Pixel pixel(PixelPoint pixelPoint) {

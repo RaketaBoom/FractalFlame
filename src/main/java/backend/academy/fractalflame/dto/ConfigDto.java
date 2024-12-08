@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public record ConfigDto(
+    int threads,
     int height,
     int width,
     int iterations,
