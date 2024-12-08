@@ -1,6 +1,7 @@
 package backend.academy.fractalflame.model;
 
 public record PixelPoint(
-    int x, int y
+    int x,
+    int y
 ) {
 }

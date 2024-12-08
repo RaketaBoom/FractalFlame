@@ -15,5 +15,5 @@ public class Constants {
     public static final double WIDTH_RECT = 4;
     public static final double HEIGHT_RECT = 4;
     public static final Rect WORLD = new Rect(X_RECT, Y_RECT, WIDTH_RECT, HEIGHT_RECT);
-    public static final double GAMMA = 2.4;
+    public static final double GAMMA = 3.0;
 }

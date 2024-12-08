@@ -5,10 +5,10 @@ import java.time.format.DateTimeFormatter;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
-public final class FileNameGenerator {
+public class FileNameGenerator {
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
+
     public static String dataTimeName() {
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
-        return now.format(formatter);
+        return LocalDateTime.now().format(FORMATTER);
     }
 }

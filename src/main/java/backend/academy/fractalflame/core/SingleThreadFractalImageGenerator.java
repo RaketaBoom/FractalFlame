@@ -12,9 +12,8 @@ import java.util.List;
 import java.util.Random;
 import lombok.RequiredArgsConstructor;
 
-//TODO переназвать класс в FractalImageGenerator или FractalImage переименовать в Histogram
 @RequiredArgsConstructor
-public class FlameHistogramGenerator {
+public class SingleThreadFractalImageGenerator {
     public static final int MAX_COLOR_VALUE = 0xFFFFFF;
 
     private final Random random;
@@ -50,7 +49,6 @@ public class FlameHistogramGenerator {
         return fractalImage;
     }
 
-    //TODO переназвать переменные
     private Color mixColors(Color firstColor, Color secondColor) {
         if (firstColor == null || secondColor == null) {
             return firstColor;
@@ -88,6 +86,7 @@ public class FlameHistogramGenerator {
                 return variation;
             }
         }
+
         return variations.getLast();
     }
 

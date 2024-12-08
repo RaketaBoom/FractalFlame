@@ -1,7 +1,7 @@
 package backend.academy.fractalflame.service;
 
 import backend.academy.fractalflame.constant.Constants;
-import backend.academy.fractalflame.core.FlameHistogramGenerator;
+import backend.academy.fractalflame.core.SingleThreadFractalImageGenerator;
 import backend.academy.fractalflame.dto.HistogramRequest;
 import backend.academy.fractalflame.model.FractalImage;
 import backend.academy.fractalflame.model.Rect;
@@ -15,14 +15,14 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class FractalFlameService {
-    private final FlameHistogramGenerator flameHistogramGenerator;
+    private final SingleThreadFractalImageGenerator singleThreadFractalImageGenerator;
 
     public FractalImage createFlameHistogram(HistogramRequest request) {
         List<Variation> variations = request.variations();
 
         addSymmetry(variations, request.symmetry(), Constants.WORLD);
 
-        return flameHistogramGenerator.generate(
+        return singleThreadFractalImageGenerator.generate(
             request.width(),
             request.height(),
             request.iterations(),
@@ -31,7 +31,6 @@ public class FractalFlameService {
         );
     }
 
-    //TODO написать постпроцессинг, можно тоже конфигурировать постпроцессинг
     public FractalImage postProcessing(FractalImage image) {
         ImageProcessor logDensity = new LogDensity(Constants.GAMMA);
 
