@@ -34,9 +34,9 @@ public class FractalFlameApi {
     }
 
     private FractalImageGenerator fractalGenerator(int threads) {
-        return threads == 1 ?
-            new SingleThreadFractalImageGenerator() :
-            new MultiThreadingFractalImageGenerator(threads);
+        return threads == 1
+            ? new SingleThreadFractalImageGenerator()
+            : new MultiThreadingFractalImageGenerator(threads);
     }
 
     private void saveImage(FractalImage fractalImage, String outputDirectory, ImageFormat format) {
