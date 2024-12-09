@@ -2,7 +2,7 @@ package backend.academy.fractalflame.factory;
 
 import backend.academy.fractalflame.dto.AffineFunctionDto;
 import backend.academy.fractalflame.dto.ConfigDto;
-import backend.academy.fractalflame.dto.HistogramRequest;
+import backend.academy.fractalflame.dto.FractalImageRequest;
 import backend.academy.fractalflame.dto.VariationDto;
 import backend.academy.fractalflame.exception.IllegalTransformationException;
 import backend.academy.fractalflame.model.Variation;
@@ -18,12 +18,12 @@ import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class HistogramRequestFactory {
-    public static HistogramRequest createFromConfig(ConfigDto config) {
+    public static FractalImageRequest createFromConfig(ConfigDto config) {
         ConfigValidator.validate(config);
 
         List<Variation> variations = mapVariations(config.variations(), config.affineFunctions());
 
-        return new HistogramRequest(config.height(), config.width(), config.iterations(), config.symmetry(),
+        return new FractalImageRequest(config.height(), config.width(), config.iterations(), config.symmetry(),
             variations);
     }
 

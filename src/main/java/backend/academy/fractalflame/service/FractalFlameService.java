@@ -2,7 +2,7 @@ package backend.academy.fractalflame.service;
 
 import backend.academy.fractalflame.constant.Constants;
 import backend.academy.fractalflame.core.FractalImageGenerator;
-import backend.academy.fractalflame.dto.HistogramRequest;
+import backend.academy.fractalflame.dto.FractalImageRequest;
 import backend.academy.fractalflame.model.FractalImage;
 import backend.academy.fractalflame.model.Rect;
 import backend.academy.fractalflame.model.Variation;
@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 public class FractalFlameService {
     private final FractalImageGenerator fractalImageGenerator;
 
-    public FractalImage createFlameHistogram(HistogramRequest request) {
+    public FractalImage createFractalImage(FractalImageRequest request) {
         List<Variation> variations = request.variations();
 
         addSymmetry(variations, request.symmetry(), Constants.WORLD);

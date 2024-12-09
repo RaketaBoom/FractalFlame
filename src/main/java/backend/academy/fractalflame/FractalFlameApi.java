@@ -5,7 +5,7 @@ import backend.academy.fractalflame.core.FractalImageGenerator;
 import backend.academy.fractalflame.core.MultiThreadingFractalImageGenerator;
 import backend.academy.fractalflame.core.SingleThreadFractalImageGenerator;
 import backend.academy.fractalflame.dto.ConfigDto;
-import backend.academy.fractalflame.dto.HistogramRequest;
+import backend.academy.fractalflame.dto.FractalImageRequest;
 import backend.academy.fractalflame.enums.ImageFormat;
 import backend.academy.fractalflame.factory.HistogramRequestFactory;
 import backend.academy.fractalflame.loader.JsonConfigLoader;
@@ -23,11 +23,11 @@ public class FractalFlameApi {
 
         ConfigDto configDto = configLoader.loadConfig(Path.of(Constants.CONFIG_PATH));
 
-        HistogramRequest histogramRequest = HistogramRequestFactory.createFromConfig(configDto);
+        FractalImageRequest fractalImageRequest = HistogramRequestFactory.createFromConfig(configDto);
         ImageFormat format = ImageFormat.valueOfLabel(configDto.format());
         FractalFlameService service = new FractalFlameService(fractalGenerator(configDto.threads()));
 
-        FractalImage fractalImage = service.createFlameHistogram(histogramRequest);
+        FractalImage fractalImage = service.createFractalImage(fractalImageRequest);
         fractalImage = service.postProcessing(fractalImage);
 
         saveImage(fractalImage, Constants.OUTPUT_DIRECTORY, format);
