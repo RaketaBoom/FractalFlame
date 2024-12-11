@@ -7,7 +7,6 @@ import backend.academy.fractalflame.model.FractalImage;
 import backend.academy.fractalflame.model.Rect;
 import backend.academy.fractalflame.model.Variation;
 import backend.academy.fractalflame.postprocessing.ImageProcessor;
-import backend.academy.fractalflame.postprocessing.impl.LogDensity;
 import backend.academy.fractalflame.transformation.Transformation;
 import backend.academy.fractalflame.transformation.impl.Symmetry;
 import java.util.List;
@@ -16,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class FractalFlameService {
     private final FractalImageGenerator fractalImageGenerator;
+    private final ImageProcessor imageProcessor;
 
     public FractalImage createFractalImage(FractalImageRequest request) {
         List<Variation> variations = request.variations();
@@ -32,9 +32,7 @@ public class FractalFlameService {
     }
 
     public FractalImage postProcessing(FractalImage image) {
-        ImageProcessor logDensity = new LogDensity(Constants.GAMMA);
-
-        logDensity.process(image);
+        imageProcessor.process(image);
 
         return image;
     }

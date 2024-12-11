@@ -10,6 +10,7 @@ import backend.academy.fractalflame.enums.ImageFormat;
 import backend.academy.fractalflame.factory.HistogramRequestFactory;
 import backend.academy.fractalflame.loader.JsonConfigLoader;
 import backend.academy.fractalflame.model.FractalImage;
+import backend.academy.fractalflame.postprocessing.impl.LogDensity;
 import backend.academy.fractalflame.service.FractalFlameService;
 import backend.academy.fractalflame.utils.FileNameGenerator;
 import backend.academy.fractalflame.utils.ImageUtils;
@@ -25,7 +26,8 @@ public class FractalFlameApi {
 
         FractalImageRequest fractalImageRequest = HistogramRequestFactory.createFromConfig(configDto);
         ImageFormat format = ImageFormat.valueOfLabel(configDto.format());
-        FractalFlameService service = new FractalFlameService(fractalGenerator(configDto.threads()));
+        FractalFlameService service =
+            new FractalFlameService(fractalGenerator(configDto.threads()), new LogDensity(Constants.GAMMA));
 
         FractalImage fractalImage = service.createFractalImage(fractalImageRequest);
         fractalImage = service.postProcessing(fractalImage);
