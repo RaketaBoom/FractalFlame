@@ -8,9 +8,11 @@ import backend.academy.fractalflame.transformation.impl.Ex;
 import backend.academy.fractalflame.transformation.impl.Fisheye;
 import backend.academy.fractalflame.transformation.impl.Heart;
 import backend.academy.fractalflame.transformation.impl.Hyperbolic;
+import backend.academy.fractalflame.transformation.impl.Noise;
 import backend.academy.fractalflame.transformation.impl.Sinusoidal;
 import backend.academy.fractalflame.transformation.impl.Spherical;
 import backend.academy.fractalflame.transformation.impl.Spiral;
+import backend.academy.fractalflame.transformation.impl.Swirl;
 import java.util.Map;
 import lombok.experimental.UtilityClass;
 
@@ -26,7 +28,9 @@ public class MapTransformation {
         Map.entry("Hyperbolic", new Hyperbolic()),
         Map.entry("Sinusoidal", new Sinusoidal()),
         Map.entry("Spherical", new Spherical()),
-        Map.entry("Spiral", new Spiral())
+        Map.entry("Spiral", new Spiral()),
+        Map.entry("Swirl", new Swirl()),
+        Map.entry("Noise", new Noise())
     );
 
     public static Transformation get(String title) {

@@ -2,50 +2,40 @@
     "threads": 8,
     "height": 4096,
     "width": 4096,
-    "iterations": 200000000,
-    "symmetry": 1,
+    "iterations": 18000000,
+    "symmetry": 4,
     "variations": [
         {
             "name": "Spherical",
-            "weight": 0.6,
-            "color": "#FF4500"
+            "weight": 0.5,
+            "color": "#00CED1"
         },
         {
-            "name": "Fisheye",
-            "weight": 0.4,
-            "color": "#1E90FF"
+            "name": "Sinusoidal",
+            "weight": 0.5,
+            "color": "#4682B4"
         }
     ],
     "affine_functions": [
         {
-            "a": 0.7,
-            "b": -0.3,
-            "c": 0.3,
-            "d": 0.7,
-            "e": 0.0,
-            "f": 0.0,
-            "weight": 0.5,
-            "color": "#FF6347"
-        },
-        {
-            "a": -0.8,
-            "b": 0.2,
-            "c": -0.2,
-            "d": 0.8,
-            "e": 0.2,
-            "f": -0.2,
-            "weight": 0.3,
-            "color": "#00BFFF"
-        },
-        {
             "a": 0.6,
             "b": -0.4,
-            "c": 0.4,
-            "d": 0.6,
-            "e": -0.3,
+            "c": 0.3,
+            "d": 0.5,
+            "e": -0.1,
             "f": 0.3,
-            "weight": 0.2,
-            "color": "#FF0000"
+            "weight": 0.4,
+            "color": "#1E90FF"
+        },
+        {
+            "a": -0.3,
+            "b": 0.5,
+            "c": -0.5,
+            "d": 0.4,
+            "e": 0.1,
+            "f": -0.4,
+            "weight": 0.6,
+            "color": "#5F9EA0"
         }
     ],
     "format": "png"
