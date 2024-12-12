@@ -4,7 +4,6 @@ import backend.academy.fractalflame.model.Point;
 import backend.academy.fractalflame.transformation.Transformation;
 
 public class Noise implements Transformation {
-
     public static final double NOISE_VALUE = 0.5;
 
     @Override
