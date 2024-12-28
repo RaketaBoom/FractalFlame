@@ -1,0 +1,17 @@
+{
+    "height": 1080,
+    "cash": 23423,
+    "variations": [
+        {
+            "name": "Heart",
+            "weight": 0.8,
+            "color": "#ebf2fa"
+        },
+        {
+            "name": "Hyperbolic",
+            "weight": 0.2,
+            "color": "#ebf2fa"
+        }
+    ],
+    "format": "png"
+}
